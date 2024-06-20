@@ -109,13 +109,13 @@ class DockerfileGenerator:
         self.create_makefile()
 
         for dockerfile, image_name in self.dockerfiles_to_build:
-            print(f"docker build -t {image_name} -f {dockerfile} .")
+            print(f"docker build --format docker --network=host -t {image_name} -f {dockerfile} .")
 
     def create_makefile(self):
         with open(f"Makefile", "w") as f:
             f.write("all:\n")
             for dockerfile, image_name in self.dockerfiles_to_build:
-                f.write(f"\tdocker build -t {image_name} -f {dockerfile} .\n")
+                f.write(f"\tdocker build --format docker --network=host -t {image_name} -f {dockerfile} .\n")
 
     def group_task_instances(self, task_instances):
         task_instances_grouped = {}
