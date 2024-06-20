@@ -75,6 +75,7 @@ async def main(
         instance[KEY_MODEL] = "golden"
 
     with tempfile.TemporaryDirectory() as temp_dir:
+        os.chmod(temp_dir, 0o777)
         await run_docker_evaluation(instance, namespace, temp_dir, verbose=True)
 
         logger.info(f"Instance {instance_id} evaluation logs:")
@@ -108,6 +109,8 @@ async def main(
                 logger.info("Fail to pass:")
                 for fail in report["FAIL_TO_PASS"]["failure"]:
                     logger.info(f" - {fail}")
+        else:
+            print("All tests we care about passed")
 
 
 
