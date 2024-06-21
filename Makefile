@@ -1,126 +1,371 @@
 all:
-	docker build -t aorwall/swe-bench-conda:bookworm-slim -f docker/Dockerfile .
-	docker build -t aorwall/swe-bench-pyenv:bookworm-slim -f docker/pyenv/Dockerfile .
-	docker build -t aorwall/swe-bench-pyenvs:bookworm-slim -f docker/pyenv/Dockerfile-pyenvs .
-	docker build -t aorwall/swe-bench-sqlfluff_sqlfluff:bookworm-slim -f docker/sqlfluff__sqlfluff/Dockerfile .
-	docker build -t aorwall/swe-bench-sqlfluff_sqlfluff-testbed:0.6 -f docker/sqlfluff__sqlfluff/0.6/Dockerfile .
-	docker build -t aorwall/swe-bench-sqlfluff_sqlfluff-testbed:0.8 -f docker/sqlfluff__sqlfluff/0.8/Dockerfile .
-	docker build -t aorwall/swe-bench-marshmallow-code_marshmallow:bookworm-slim -f docker/marshmallow-code__marshmallow/Dockerfile .
-	docker build -t aorwall/swe-bench-marshmallow-code_marshmallow-testbed:3.0 -f docker/marshmallow-code__marshmallow/3.0/Dockerfile .
-	docker build -t aorwall/swe-bench-marshmallow-code_marshmallow-testbed:2.20 -f docker/marshmallow-code__marshmallow/2.20/Dockerfile .
-	docker build -t aorwall/swe-bench-pvlib_pvlib-python:bookworm-slim -f docker/pvlib__pvlib-python/Dockerfile .
-	docker build -t aorwall/swe-bench-pvlib_pvlib-python-testbed:0.9 -f docker/pvlib__pvlib-python/0.9/Dockerfile .
-	docker build -t aorwall/swe-bench-pvlib_pvlib-python-testbed:0.7 -f docker/pvlib__pvlib-python/0.7/Dockerfile .
-	docker build -t aorwall/swe-bench-pvlib_pvlib-python-testbed:0.8 -f docker/pvlib__pvlib-python/0.8/Dockerfile .
-	docker build -t aorwall/swe-bench-pylint-dev_astroid:bookworm-slim -f docker/pylint-dev__astroid/Dockerfile .
-	docker build -t aorwall/swe-bench-pylint-dev_astroid-testbed:2.14 -f docker/pylint-dev__astroid/2.14/Dockerfile .
-	docker build -t aorwall/swe-bench-pylint-dev_astroid-testbed:2.10 -f docker/pylint-dev__astroid/2.10/Dockerfile .
-	docker build -t aorwall/swe-bench-pylint-dev_astroid-testbed:2.12 -f docker/pylint-dev__astroid/2.12/Dockerfile .
-	docker build -t aorwall/swe-bench-pylint-dev_astroid-testbed:2.13 -f docker/pylint-dev__astroid/2.13/Dockerfile .
-	docker build -t aorwall/swe-bench-pylint-dev_astroid-testbed:2.9 -f docker/pylint-dev__astroid/2.9/Dockerfile .
-	docker build -t aorwall/swe-bench-pyvista_pyvista:bookworm-slim -f docker/pyvista__pyvista/Dockerfile .
-	docker build -t aorwall/swe-bench-pyvista_pyvista-testbed:0.39 -f docker/pyvista__pyvista/0.39/Dockerfile .
-	docker build -t aorwall/swe-bench-pydicom_pydicom:bookworm-slim -f docker/pydicom__pydicom/Dockerfile .
-	docker build -t aorwall/swe-bench-pydicom_pydicom-testbed:2.3 -f docker/pydicom__pydicom/2.3/Dockerfile .
-	docker build -t aorwall/swe-bench-pydicom_pydicom-testbed:2.1 -f docker/pydicom__pydicom/2.1/Dockerfile .
-	docker build -t aorwall/swe-bench-pydicom_pydicom-testbed:1.3 -f docker/pydicom__pydicom/1.3/Dockerfile .
-	docker build -t aorwall/swe-bench-pydicom_pydicom-testbed:2.0 -f docker/pydicom__pydicom/2.0/Dockerfile .
-	docker build -t aorwall/swe-bench-django_django:bookworm-slim -f docker/django__django/Dockerfile .
-	docker build -t aorwall/swe-bench-django_django-testbed:4.1 -f docker/django__django/4.1/Dockerfile .
-	docker build -t aorwall/swe-bench-django_django-testbed:5.0 -f docker/django__django/5.0/Dockerfile .
-	docker build -t aorwall/swe-bench-django_django-testbed:4.0 -f docker/django__django/4.0/Dockerfile .
-	docker build -t aorwall/swe-bench-django_django-testbed:3.0 -f docker/django__django/3.0/Dockerfile .
-	docker build -t aorwall/swe-bench-django_django-testbed:4.2 -f docker/django__django/4.2/Dockerfile .
-	docker build -t aorwall/swe-bench-django_django-testbed:3.1 -f docker/django__django/3.1/Dockerfile .
-	docker build -t aorwall/swe-bench-django_django-testbed:3.2 -f docker/django__django/3.2/Dockerfile .
-	docker build -t aorwall/swe-bench-sphinx-doc_sphinx:bookworm-slim -f docker/sphinx-doc__sphinx/Dockerfile .
-	docker build -t aorwall/swe-bench-sphinx-doc_sphinx-testbed:3.5 -f docker/sphinx-doc__sphinx/3.5/Dockerfile .
-	docker build -t aorwall/swe-bench-sphinx-doc_sphinx-testbed:3.3 -f docker/sphinx-doc__sphinx/3.3/Dockerfile .
-	docker build -t aorwall/swe-bench-sphinx-doc_sphinx-testbed:3.4 -f docker/sphinx-doc__sphinx/3.4/Dockerfile .
-	docker build -t aorwall/swe-bench-sphinx-doc_sphinx-testbed:4.0 -f docker/sphinx-doc__sphinx/4.0/Dockerfile .
-	docker build -t aorwall/swe-bench-sphinx-doc_sphinx-testbed:3.2 -f docker/sphinx-doc__sphinx/3.2/Dockerfile .
-	docker build -t aorwall/swe-bench-sphinx-doc_sphinx-testbed:3.1 -f docker/sphinx-doc__sphinx/3.1/Dockerfile .
-	docker build -t aorwall/swe-bench-sphinx-doc_sphinx-testbed:7.1 -f docker/sphinx-doc__sphinx/7.1/Dockerfile .
-	docker build -t aorwall/swe-bench-sphinx-doc_sphinx-testbed:5.0 -f docker/sphinx-doc__sphinx/5.0/Dockerfile .
-	docker build -t aorwall/swe-bench-sphinx-doc_sphinx-testbed:5.1 -f docker/sphinx-doc__sphinx/5.1/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn:bookworm-slim -f docker/scikit-learn__scikit-learn/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-testbed:0.20 -f docker/scikit-learn__scikit-learn/0.20/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10508 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10508/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10949 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10949/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11281 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11281/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11040 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11040/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10297 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10297/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-testbed:0.21 -f docker/scikit-learn__scikit-learn/0.21/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13142 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13142/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13584 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13584/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12471 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12471/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13496 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13496/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13241 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13241/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13497 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13497/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13439 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13439/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-testbed:0.22 -f docker/scikit-learn__scikit-learn/0.22/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13779 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13779/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14087 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14087/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14092 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14092/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14983 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14983/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15535 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15535/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15512 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15512/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14894 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14894/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-testbed:1.3 -f docker/scikit-learn__scikit-learn/1.3/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25570 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25570/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25747 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25747/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25638 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25638/Dockerfile .
-	docker build -t aorwall/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25500 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25500/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy:bookworm-slim -f docker/sympy__sympy/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.1 -f docker/sympy__sympy/1.1/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.9 -f docker/sympy__sympy/1.9/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.5 -f docker/sympy__sympy/1.5/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.7 -f docker/sympy__sympy/1.7/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.0 -f docker/sympy__sympy/1.0/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.8 -f docker/sympy__sympy/1.8/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.12 -f docker/sympy__sympy/1.12/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.6 -f docker/sympy__sympy/1.6/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.4 -f docker/sympy__sympy/1.4/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.11 -f docker/sympy__sympy/1.11/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.2 -f docker/sympy__sympy/1.2/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.10 -f docker/sympy__sympy/1.10/Dockerfile .
-	docker build -t aorwall/swe-bench-sympy_sympy-testbed:1.13 -f docker/sympy__sympy/1.13/Dockerfile .
-	docker build -t aorwall/swe-bench-pytest-dev_pytest:bookworm-slim -f docker/pytest-dev__pytest/Dockerfile .
-	docker build -t aorwall/swe-bench-pytest-dev_pytest-testbed:4.4 -f docker/pytest-dev__pytest/4.4/Dockerfile .
-	docker build -t aorwall/swe-bench-pytest-dev_pytest-testbed:8.0 -f docker/pytest-dev__pytest/8.0/Dockerfile .
-	docker build -t aorwall/swe-bench-pytest-dev_pytest-testbed:7.0 -f docker/pytest-dev__pytest/7.0/Dockerfile .
-	docker build -t aorwall/swe-bench-pytest-dev_pytest-testbed:5.4 -f docker/pytest-dev__pytest/5.4/Dockerfile .
-	docker build -t aorwall/swe-bench-pytest-dev_pytest-testbed:5.0 -f docker/pytest-dev__pytest/5.0/Dockerfile .
-	docker build -t aorwall/swe-bench-pytest-dev_pytest-testbed:4.5 -f docker/pytest-dev__pytest/4.5/Dockerfile .
-	docker build -t aorwall/swe-bench-pytest-dev_pytest-testbed:6.3 -f docker/pytest-dev__pytest/6.3/Dockerfile .
-	docker build -t aorwall/swe-bench-pytest-dev_pytest-testbed:4.6 -f docker/pytest-dev__pytest/4.6/Dockerfile .
-	docker build -t aorwall/swe-bench-pytest-dev_pytest-testbed:5.2 -f docker/pytest-dev__pytest/5.2/Dockerfile .
-	docker build -t aorwall/swe-bench-pytest-dev_pytest-testbed:6.0 -f docker/pytest-dev__pytest/6.0/Dockerfile .
-	docker build -t aorwall/swe-bench-matplotlib_matplotlib:bookworm-slim -f docker/matplotlib__matplotlib/Dockerfile .
-	docker build -t aorwall/swe-bench-matplotlib_matplotlib-testbed:3.5 -f docker/matplotlib__matplotlib/3.5/Dockerfile .
-	docker build -t aorwall/swe-bench-matplotlib_matplotlib-testbed:3.6 -f docker/matplotlib__matplotlib/3.6/Dockerfile .
-	docker build -t aorwall/swe-bench-matplotlib_matplotlib-testbed:3.3 -f docker/matplotlib__matplotlib/3.3/Dockerfile .
-	docker build -t aorwall/swe-bench-matplotlib_matplotlib-testbed:3.7 -f docker/matplotlib__matplotlib/3.7/Dockerfile .
-	docker build -t aorwall/swe-bench-astropy_astropy:bookworm-slim -f docker/astropy__astropy/Dockerfile .
-	docker build -t aorwall/swe-bench-astropy_astropy-testbed:4.3 -f docker/astropy__astropy/4.3/Dockerfile .
-	docker build -t aorwall/swe-bench-astropy_astropy-testbed:5.1 -f docker/astropy__astropy/5.1/Dockerfile .
-	docker build -t aorwall/swe-bench-astropy_astropy-testbed:1.3 -f docker/astropy__astropy/1.3/Dockerfile .
-	docker build -t aorwall/swe-bench-astropy_astropy-testbed:5.2 -f docker/astropy__astropy/5.2/Dockerfile .
-	docker build -t aorwall/swe-bench-pydata_xarray:bookworm-slim -f docker/pydata__xarray/Dockerfile .
-	docker build -t aorwall/swe-bench-pydata_xarray-testbed:0.12 -f docker/pydata__xarray/0.12/Dockerfile .
-	docker build -t aorwall/swe-bench-mwaskom_seaborn:bookworm-slim -f docker/mwaskom__seaborn/Dockerfile .
-	docker build -t aorwall/swe-bench-mwaskom_seaborn-testbed:0.12 -f docker/mwaskom__seaborn/0.12/Dockerfile .
-	docker build -t aorwall/swe-bench-mwaskom_seaborn-testbed:0.13 -f docker/mwaskom__seaborn/0.13/Dockerfile .
-	docker build -t aorwall/swe-bench-psf_requests:bookworm-slim -f docker/psf__requests/Dockerfile .
-	docker build -t aorwall/swe-bench-psf_requests-testbed:0.14 -f docker/psf__requests/0.14/Dockerfile .
-	docker build -t aorwall/swe-bench-psf_requests-testbed:2.4 -f docker/psf__requests/2.4/Dockerfile .
-	docker build -t aorwall/swe-bench-psf_requests-testbed:2.7 -f docker/psf__requests/2.7/Dockerfile .
-	docker build -t aorwall/swe-bench-psf_requests-testbed:2.3 -f docker/psf__requests/2.3/Dockerfile .
-	docker build -t aorwall/swe-bench-psf_requests-testbed:2.10 -f docker/psf__requests/2.10/Dockerfile .
-	docker build -t aorwall/swe-bench-pylint-dev_pylint:bookworm-slim -f docker/pylint-dev__pylint/Dockerfile .
-	docker build -t aorwall/swe-bench-pylint-dev_pylint-testbed:2.15 -f docker/pylint-dev__pylint/2.15/Dockerfile .
-	docker build -t aorwall/swe-bench-pylint-dev_pylint-testbed:2.14 -f docker/pylint-dev__pylint/2.14/Dockerfile .
-	docker build -t aorwall/swe-bench-pylint-dev_pylint-testbed:2.13 -f docker/pylint-dev__pylint/2.13/Dockerfile .
-	docker build -t aorwall/swe-bench-pallets_flask:bookworm-slim -f docker/pallets__flask/Dockerfile .
-	docker build -t aorwall/swe-bench-pallets_flask-testbed:2.0 -f docker/pallets__flask/2.0/Dockerfile .
-	docker build -t aorwall/swe-bench-pallets_flask-testbed:2.3 -f docker/pallets__flask/2.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-conda:bookworm-slim -f docker/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pyenv:bookworm-slim -f docker/pyenv/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pyenvs:bookworm-slim -f docker/pyenv/Dockerfile-pyenvs .
+	docker build --format docker --network=host -t aiengineer/swe-bench-astropy_astropy:bookworm-slim -f docker/astropy__astropy/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-astropy_astropy-testbed:4.2 -f docker/astropy__astropy/4.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-astropy_astropy-testbed:4.3 -f docker/astropy__astropy/4.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-astropy_astropy-testbed:5.0 -f docker/astropy__astropy/5.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-astropy_astropy-testbed:5.1 -f docker/astropy__astropy/5.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-astropy_astropy-testbed:5.2 -f docker/astropy__astropy/5.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-astropy_astropy-testbed:1.3 -f docker/astropy__astropy/1.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-astropy_astropy-testbed:3.0 -f docker/astropy__astropy/3.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-astropy_astropy-testbed:3.1 -f docker/astropy__astropy/3.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django:bookworm-slim -f docker/django__django/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:2.2 -f docker/django__django/2.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:3.0 -f docker/django__django/3.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:3.1 -f docker/django__django/3.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:3.2 -f docker/django__django/3.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:4.1 -f docker/django__django/4.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:4.0 -f docker/django__django/4.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:4.2 -f docker/django__django/4.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:5.0 -f docker/django__django/5.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:1.9 -f docker/django__django/1.9/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:1.10 -f docker/django__django/1.10/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:1.11 -f docker/django__django/1.11/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:2.0 -f docker/django__django/2.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-django_django-testbed:2.1 -f docker/django__django/2.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-matplotlib_matplotlib:bookworm-slim -f docker/matplotlib__matplotlib/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-matplotlib_matplotlib-testbed:3.0 -f docker/matplotlib__matplotlib/3.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-matplotlib_matplotlib-testbed:3.1 -f docker/matplotlib__matplotlib/3.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-matplotlib_matplotlib-testbed:3.2 -f docker/matplotlib__matplotlib/3.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-matplotlib_matplotlib-testbed:3.3 -f docker/matplotlib__matplotlib/3.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-matplotlib_matplotlib-testbed:3.4 -f docker/matplotlib__matplotlib/3.4/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-matplotlib_matplotlib-testbed:3.5 -f docker/matplotlib__matplotlib/3.5/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-matplotlib_matplotlib-testbed:3.6 -f docker/matplotlib__matplotlib/3.6/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-matplotlib_matplotlib-testbed:3.7 -f docker/matplotlib__matplotlib/3.7/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-mwaskom_seaborn:bookworm-slim -f docker/mwaskom__seaborn/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-mwaskom_seaborn-testbed:0.12 -f docker/mwaskom__seaborn/0.12/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-mwaskom_seaborn-testbed:0.11 -f docker/mwaskom__seaborn/0.11/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-mwaskom_seaborn-testbed:0.13 -f docker/mwaskom__seaborn/0.13/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pallets_flask:bookworm-slim -f docker/pallets__flask/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pallets_flask-testbed:2.0 -f docker/pallets__flask/2.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pallets_flask-testbed:2.1 -f docker/pallets__flask/2.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pallets_flask-testbed:2.2 -f docker/pallets__flask/2.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pallets_flask-testbed:2.3 -f docker/pallets__flask/2.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests:bookworm-slim -f docker/psf__requests/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:1.1 -f docker/psf__requests/1.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:1.2 -f docker/psf__requests/1.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.0 -f docker/psf__requests/2.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.2 -f docker/psf__requests/2.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.3 -f docker/psf__requests/2.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.4 -f docker/psf__requests/2.4/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.5 -f docker/psf__requests/2.5/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.7 -f docker/psf__requests/2.7/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:3.0 -f docker/psf__requests/3.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.8 -f docker/psf__requests/2.8/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.9 -f docker/psf__requests/2.9/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.10 -f docker/psf__requests/2.10/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.12 -f docker/psf__requests/2.12/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.17 -f docker/psf__requests/2.17/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.18 -f docker/psf__requests/2.18/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.19 -f docker/psf__requests/2.19/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.22 -f docker/psf__requests/2.22/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.26 -f docker/psf__requests/2.26/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:2.27 -f docker/psf__requests/2.27/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:0.13 -f docker/psf__requests/0.13/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-psf_requests-testbed:0.14 -f docker/psf__requests/0.14/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pydata_xarray:bookworm-slim -f docker/pydata__xarray/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pydata_xarray-testbed:0.12 -f docker/pydata__xarray/0.12/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pydata_xarray-testbed:0.18 -f docker/pydata__xarray/0.18/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pydata_xarray-testbed:0.19 -f docker/pydata__xarray/0.19/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pydata_xarray-testbed:0.20 -f docker/pydata__xarray/0.20/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pydata_xarray-testbed:2022.03 -f docker/pydata__xarray/2022.03/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pydata_xarray-testbed:2022.06 -f docker/pydata__xarray/2022.06/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pydata_xarray-testbed:2022.09 -f docker/pydata__xarray/2022.09/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pylint-dev_pylint:bookworm-slim -f docker/pylint-dev__pylint/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pylint-dev_pylint-testbed:2.10 -f docker/pylint-dev__pylint/2.10/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pylint-dev_pylint-testbed:2.8 -f docker/pylint-dev__pylint/2.8/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pylint-dev_pylint-testbed:2.9 -f docker/pylint-dev__pylint/2.9/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pylint-dev_pylint-testbed:2.11 -f docker/pylint-dev__pylint/2.11/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pylint-dev_pylint-testbed:2.13 -f docker/pylint-dev__pylint/2.13/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pylint-dev_pylint-testbed:2.14 -f docker/pylint-dev__pylint/2.14/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pylint-dev_pylint-testbed:2.15 -f docker/pylint-dev__pylint/2.15/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pylint-dev_pylint-testbed:2.16 -f docker/pylint-dev__pylint/2.16/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pylint-dev_pylint-testbed:2.17 -f docker/pylint-dev__pylint/2.17/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pylint-dev_pylint-testbed:3.0 -f docker/pylint-dev__pylint/3.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest:bookworm-slim -f docker/pytest-dev__pytest/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:7.2 -f docker/pytest-dev__pytest/7.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:7.4 -f docker/pytest-dev__pytest/7.4/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:8.0 -f docker/pytest-dev__pytest/8.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:4.5 -f docker/pytest-dev__pytest/4.5/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:4.4 -f docker/pytest-dev__pytest/4.4/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:4.6 -f docker/pytest-dev__pytest/4.6/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:5.0 -f docker/pytest-dev__pytest/5.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:5.1 -f docker/pytest-dev__pytest/5.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:5.2 -f docker/pytest-dev__pytest/5.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:5.4 -f docker/pytest-dev__pytest/5.4/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:5.3 -f docker/pytest-dev__pytest/5.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:6.0 -f docker/pytest-dev__pytest/6.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:6.2 -f docker/pytest-dev__pytest/6.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:6.3 -f docker/pytest-dev__pytest/6.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:7.0 -f docker/pytest-dev__pytest/7.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-pytest-dev_pytest-testbed:7.1 -f docker/pytest-dev__pytest/7.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn:bookworm-slim -f docker/scikit-learn__scikit-learn/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-testbed:0.20 -f docker/scikit-learn__scikit-learn/0.20/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10198 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10198/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10297 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10297/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10306 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10306/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10331 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10331/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10377 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10377/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10382 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10382/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10397 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10397/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10427 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10427/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10428 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10428/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10443 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10443/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10452 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10452/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10459 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10459/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10471 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10471/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10483 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10483/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10495 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10495/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10508 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10508/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10558 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10558/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10577 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10577/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10581 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10581/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10687 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10687/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10774 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10774/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10777 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10777/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10803 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10803/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10844 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10844/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10870 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10870/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10881 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10881/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10899 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10899/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10908 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10908/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10913 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10913/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10949 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10949/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10982 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10982/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-10986 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-10986/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11040 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11040/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11042 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11042/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11043 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11043/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11151 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11151/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11160 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11160/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11206 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11206/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11235 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11235/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11243 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11243/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11264 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11264/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11281 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11281/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11310 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11310/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11315 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11315/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11333 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11333/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11346 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11346/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11391 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11391/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11496 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11496/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11542 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11542/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11574 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11574/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11578 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11578/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11585 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11585/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11596 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-11596/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12784 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-12784/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-3840 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-3840/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-7760 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-7760/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-8554 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-8554/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-9304 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-9304/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-9775 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-9775/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-9939 -f docker/scikit-learn__scikit-learn/0.20/scikit-learn__scikit-learn-9939/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-testbed:0.22 -f docker/scikit-learn__scikit-learn/0.22/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-11635 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-11635/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12258 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-12258/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12557 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-12557/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12682 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-12682/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13013 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13013/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13302 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13302/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13392 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13392/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13467 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13467/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13618 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13618/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13704 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13704/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13726 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13726/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13779 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13779/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13780 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13780/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13828 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13828/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13864 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13864/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13877 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13877/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13910 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13910/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13933 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13933/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13960 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13960/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13974 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13974/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13983 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-13983/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14012 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14012/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14024 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14024/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14053 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14053/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14067 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14067/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14087 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14087/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14092 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14092/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14114 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14114/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14125 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14125/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14141 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14141/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14237 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14237/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14309 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14309/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14430 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14430/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14450 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14450/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14458 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14458/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14464 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14464/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14496 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14496/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14520 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14520/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14544 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14544/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14591 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14591/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14629 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14629/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14704 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14704/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14706 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14706/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14710 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14710/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14732 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14732/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14764 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14764/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14806 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14806/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14869 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14869/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14878 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14878/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14890 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14890/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14894 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14894/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14898 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14898/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14908 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14908/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14983 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14983/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-14999 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-14999/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15028 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15028/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15084 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15084/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15086 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15086/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15094 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15094/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15096 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15096/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15100 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15100/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15119 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15119/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15120 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15120/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15138 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15138/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15393 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15393/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15495 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15495/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15512 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15512/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15524 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15524/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15535 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15535/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-15625 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-15625/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-9274 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-9274/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-9288 -f docker/scikit-learn__scikit-learn/0.22/scikit-learn__scikit-learn-9288/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-testbed:0.21 -f docker/scikit-learn__scikit-learn/0.21/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12421 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12421/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12443 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12443/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12462 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12462/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12471 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12471/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12486 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12486/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12583 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12583/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12585 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12585/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12625 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12625/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12626 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12626/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12656 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12656/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12704 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12704/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12733 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12733/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12758 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12758/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12760 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12760/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12827 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12827/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12834 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12834/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12860 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12860/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12908 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12908/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12938 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12938/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12961 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12961/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12973 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12973/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12983 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12983/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-12989 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-12989/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13010 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13010/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13017 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13017/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13046 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13046/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13087 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13087/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13124 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13124/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13135 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13135/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13142 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13142/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13143 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13143/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13157 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13157/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13165 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13165/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13174 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13174/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13221 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13221/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13241 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13241/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13253 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13253/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13280 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13280/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13283 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13283/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13313 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13313/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13328 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13328/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13333 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13333/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13363 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13363/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13368 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13368/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13436 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13436/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13439 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13439/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13447 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13447/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13454 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13454/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13472 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13472/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13485 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13485/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13496 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13496/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13497 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13497/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13536 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13536/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13549 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13549/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13554 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13554/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13584 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13584/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13620 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13620/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13628 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13628/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13641 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13641/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-13915 -f docker/scikit-learn__scikit-learn/0.21/scikit-learn__scikit-learn-13915/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-testbed:1.3 -f docker/scikit-learn__scikit-learn/1.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-19664 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-19664/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-23099 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-23099/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-24145 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-24145/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-24677 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-24677/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-24769 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-24769/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25102 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25102/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25232 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25232/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25299 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25299/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25308 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25308/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25363 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25363/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25370 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25370/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25443 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25443/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25500 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25500/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25570 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25570/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25589 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25589/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25601 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25601/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25638 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25638/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25672 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25672/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25694 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25694/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25697 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25697/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25733 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25733/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25744 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25744/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25747 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25747/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25752 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25752/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25774 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25774/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25805 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25805/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25931 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25931/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25969 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25969/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-25973 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-25973/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-26194 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-26194/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-26242 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-26242/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-26289 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-26289/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-26318 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-26318/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-26323 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-26323/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-26400 -f docker/scikit-learn__scikit-learn/1.3/scikit-learn__scikit-learn-26400/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-testbed:1.4 -f docker/scikit-learn__scikit-learn/1.4/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-26634 -f docker/scikit-learn__scikit-learn/1.4/scikit-learn__scikit-learn-26634/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-scikit-learn_scikit-learn-instance:scikit-learn__scikit-learn-26644 -f docker/scikit-learn__scikit-learn/1.4/scikit-learn__scikit-learn-26644/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx:bookworm-slim -f docker/sphinx-doc__sphinx/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:4.4 -f docker/sphinx-doc__sphinx/4.4/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:5.0 -f docker/sphinx-doc__sphinx/5.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:5.3 -f docker/sphinx-doc__sphinx/5.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:5.1 -f docker/sphinx-doc__sphinx/5.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:7.2 -f docker/sphinx-doc__sphinx/7.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:5.2 -f docker/sphinx-doc__sphinx/5.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:6.2 -f docker/sphinx-doc__sphinx/6.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:7.1 -f docker/sphinx-doc__sphinx/7.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:3.0 -f docker/sphinx-doc__sphinx/3.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:3.1 -f docker/sphinx-doc__sphinx/3.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:3.2 -f docker/sphinx-doc__sphinx/3.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:4.0 -f docker/sphinx-doc__sphinx/4.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:3.3 -f docker/sphinx-doc__sphinx/3.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:3.4 -f docker/sphinx-doc__sphinx/3.4/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:3.5 -f docker/sphinx-doc__sphinx/3.5/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:4.1 -f docker/sphinx-doc__sphinx/4.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:4.3 -f docker/sphinx-doc__sphinx/4.3/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sphinx-doc_sphinx-testbed:4.2 -f docker/sphinx-doc__sphinx/4.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy:bookworm-slim -f docker/sympy__sympy/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.0 -f docker/sympy__sympy/1.0/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.1 -f docker/sympy__sympy/1.1/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.2 -f docker/sympy__sympy/1.2/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.4 -f docker/sympy__sympy/1.4/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.5 -f docker/sympy__sympy/1.5/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.6 -f docker/sympy__sympy/1.6/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.7 -f docker/sympy__sympy/1.7/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.8 -f docker/sympy__sympy/1.8/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.9 -f docker/sympy__sympy/1.9/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.10 -f docker/sympy__sympy/1.10/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.11 -f docker/sympy__sympy/1.11/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.12 -f docker/sympy__sympy/1.12/Dockerfile .
+	docker build --format docker --network=host -t aiengineer/swe-bench-sympy_sympy-testbed:1.13 -f docker/sympy__sympy/1.13/Dockerfile .

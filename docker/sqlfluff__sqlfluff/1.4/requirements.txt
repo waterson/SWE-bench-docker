@@ -1,0 +1,25 @@
+flake8
+flake8-docstrings
+pydocstyle<6.2.0  # See: https://github.com/PyCQA/pydocstyle/issues/618
+black>=22.1.0
+flake8-black>=0.2.4
+ruff
+doc8
+Pygments
+coverage>=6.4
+hypothesis
+pytest
+pytest-cov
+pytest-xdist
+mypy
+types-toml
+types-pkg_resources
+types-chardet
+types-appdirs
+types-colorama
+types-pyyaml
+types-Jinja2
+types-regex
+requests
+ghapi
+yamllint
